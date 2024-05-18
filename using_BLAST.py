@@ -18,7 +18,7 @@ print("running BLAST over internet")
 fasta_string = open(f).read()
 result_handle = NCBIWWW.qblast("blastn","nt", fasta_string)#get ID/handle of query results
 
-blast_record = NCBIXML.read(result_handle)
+blast_record = NCBIXML.read(result_handle)#runs a special method to read XML (web-friendly ata format) of results
 len(blast_record.alignments) #get all alignments
 
 print("processing results")
